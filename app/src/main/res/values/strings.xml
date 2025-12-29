@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">GitHubSearch</string>
-    <string name="nome_usuario">Nome do usuário</string>
-    <string name="confirmar">Confirmar</string>
+    <string name="user_name">Nome do usuário</string>
+    <string name="confirm">Confirmar</string>
+    <string name="user_saved_successfully">Usuário %1$s salvo localmente com sucesso!</string>
+    <string name="btn_saving">Salvando ...</string>
+    <string name="btn_saved">Salvo</string>
+    <string name="displaying_repositories_list_error">Ops, ocorreu um erro e não é possível exibir a lista.\nTente novamente mais tarde</string>
+    <string name="repositories_list_error_message_response_ok">Nenhum repositório encontrado, desculpe :(</string>
+    <string name="respositories_list_error_message_response_not_found">Por favor, informe um usuário válido!</string>
+    <string name="repositories_list_error_message">Ocorreu um erro, por favor tente novamente mais tarde!</string>
 </resources>
