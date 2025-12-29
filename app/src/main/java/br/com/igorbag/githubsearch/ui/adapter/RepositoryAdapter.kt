@@ -10,20 +10,36 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.igorbag.githubsearch.R
 import br.com.igorbag.githubsearch.domain.Repository
 
+/**
+ * Adapter for the list of repositories.
+ *
+ * @property repositories The list of repositories to be displayed.
+ */
 class RepositoryAdapter(private val repositories: List<Repository>) :
     RecyclerView.Adapter<RepositoryAdapter.ViewHolder>() {
 
+    /**
+     * Click listener for the card item.
+     */
     var carItemLister: (String) -> Unit = {}
+
+    /**
+     * Click listener for the share button.
+     */
     var btnShareLister: (String) -> Unit = {}
 
-    // Cria uma nova view
+    /**
+     * Creates a new view holder.
+     */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.repository_item, parent, false)
         return ViewHolder(view)
     }
 
-    // Pega o conteudo da view e troca pela informacao de item de uma lista
+    /**
+     * Binds the data to the view holder.
+     */
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.repositoryName.text = repositories[position].name
         holder.repositoryShareButton.setOnClickListener {
@@ -34,8 +50,16 @@ class RepositoryAdapter(private val repositories: List<Repository>) :
         }
     }
 
+    /**
+     * Returns the total number of items in the list.
+     */
     override fun getItemCount(): Int = repositories.size
 
+    /**
+     * View holder for a repository item.
+     *
+     * @property itemView The view for the item.
+     */
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val repositoryName: TextView
         val repositoryShareButton: ImageView
@@ -50,5 +74,3 @@ class RepositoryAdapter(private val repositories: List<Repository>) :
         }
     }
 }
-
-
